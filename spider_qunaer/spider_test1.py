@@ -3,6 +3,7 @@ import os
 import numpy as np
 import pandas as pd
 
+
 def spider_place(keyword, page):
     """
     爬取景点
@@ -27,6 +28,9 @@ def spider_place(keyword, page):
     return response.json()
 
 
+PLACE_EXCEL_PATH = ""
+
+
 def save_excel(place_list):
     """
     将json数据生成excel
@@ -34,10 +38,9 @@ def save_excel(place_list):
     :return:
     """
     # pandas对excel没有追加模式，只能先读后写
-    PLACE_EXCEL_PATH = ""
+
     if os.path.exists(PLACE_EXCEL_PATH):
         pass
-
 
 
 json = spider_place('国庆旅游景点', 1)
